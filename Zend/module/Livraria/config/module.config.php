@@ -15,32 +15,11 @@ return array(
                     ),
                 ),
             ),
-            'livraria-admin-interna' => array(
-                'type' => 'Segment',
-                'options' => array(
-                    'route'    => '/admin/[:controller[/:action][/:id]]',
-                    'constraints' => array(
-                        'id' => '[0-9]+'
-                    ),
-                ),
-            ),
-            'livraria-admin' => array(
-                'type' => 'Segment',
-                'options' => array(
-                    'route'    => '/admin/[:controller[/:action][/page/:page]]',
-                    'defaults' => array(
-                        'action'     => 'index',
-                        'page' => 1,
-                    ),
-                ),
-            ),
         ),
     ),
     'controllers' => array(
         'invokables' => array(
-            'Livraria\Controller\Index' => 'Livraria\Controller\IndexController',
-            'categorias' => 'LivrariaAdmin\Controller\CategoriasController',
-            'livros' => 'LivrariaAdmin\Controller\LivrosController',
+            'Livraria\Controller\Index' => 'Livraria\Controller\IndexController'
         ),
     ),
     'view_manager' => array(

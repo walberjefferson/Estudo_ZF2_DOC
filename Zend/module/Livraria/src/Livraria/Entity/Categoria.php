@@ -13,12 +13,6 @@ use Doctrine\Common\Collections\ArrayCollection;
 
 class Categoria
 {
-
-    public function __construct($options = null){
-        Configurator::configure($this, $options);
-        $this->livros = new ArrayCollection();
-    }
-
     /**
      * @ORM\Id
      * @ORM\Column(type="integer")
@@ -32,11 +26,6 @@ class Categoria
      * @var string
      */
     protected $nome;
-
-    /**
-     * @ORM\OneToMany(targetEntity="Livraria\Entity\Livro", mappedBy="categoria")
-     */
-    protected $livros;
 
 
     public function getId()
@@ -55,10 +44,6 @@ class Categoria
     public function setNome($nome)
     {
         $this->nome = $nome;
-    }
-
-    public function getLivros(){
-        return $this->livros;
     }
 
     public function __toString()
